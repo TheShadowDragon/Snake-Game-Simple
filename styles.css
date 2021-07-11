@@ -1,0 +1,110 @@
+.ScoreBoard {
+    padding: 0.5px;
+    text-align: center;
+    background: #f2f2f2;
+    color: black;
+    font-family: "Monaco";
+    font-size: 20px;
+    
+}
+
+.title {
+    color: blue;
+    background: none;
+    font-family: "Courier";
+    font-size: 30px; 
+    position: absolute;
+    margin-right: 70%;
+    left: 50px;
+    top: 200px;
+    transition-duration: 0.5s;
+    animation: titleAnimation 5s infinite;
+}
+
+@keyframes titleAnimation {
+    0%, 100% {
+        left: 50px;
+        top:200px;
+    
+    }
+    
+    50% {
+        
+        left: 60px;
+        top: 150px;   
+    }
+
+}
+
+
+
+.controls {
+    color: blue;
+    background: none;
+    font-family: "Courier";
+    font-size: 30px; 
+    position: absolute;
+    margin-left: 30%;
+    right: 70px;
+    top: 200px;   
+    animation: controlsAnimation 5s infinite;
+    
+}
+
+@keyframes controlsAnimation {
+    0%, 100% {
+        right: 70px;
+        top:200px;
+    
+    }
+    
+    50% {
+        
+        right: 80px;
+        top: 150px;   
+    }
+
+}
+
+.resetButton{
+    
+    background-color: #4CAF50;
+    border: 2px solid #000000;
+    position: absolute;
+    bottom: 10px;
+    right: 43%;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+
+}
+
+.resetButton:hover {
+    background-color: black;
+    color: white;
+}
+
+.resetButton:active {
+    font-size: 20px;
+    padding: 20px 37px;
+    background-color: orange;
+
+}
+
+@keyframes deathShake {
+    0%, 100% {
+        transform: rotate(0deg);
+        
+    }
+    
+    50% {
+        transform: rotate(180deg);
+
+    }
+   
+    
+
+}
