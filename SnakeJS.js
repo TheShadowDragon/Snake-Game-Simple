@@ -1,18 +1,3 @@
-/*
-TODO:
-
-Walls Kill
-Explain how things work for people checking out code
-Increase Speed??
-Make it a website
-Increase the size
-Make a death screen
-Organize
-
-Add a high score mechanism.
-
-*/
-
 //Declaring some Variables 
 var HighScore = localStorage.getItem("highScore");
 xVelocity=yVelocity=0;
@@ -34,9 +19,6 @@ window.onload = function() {
     
 }    
 
-
-   
-     
 
 //Main Function that repeats itself 15 times a minute (1000/15)
 
@@ -150,14 +132,17 @@ function KeyPressed(event){
             break;    
             
     }
-if (HighScore < Path.length){
-        localStorage.setItem("highScore", Path.length - 5);
+
+//sets high score if one is achieved.
+if (HighScore < Path.length-5){
+        localStorage.setItem("highScore", Path.length-5);
         }
 
   
 
 }
 
+//Resets the highscore
 function resetHighscore(){
 
     localStorage.setItem("highScore", 0);

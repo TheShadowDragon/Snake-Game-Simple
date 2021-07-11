@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
 <head>
-    
-    <title></title>
-    
 </head>
-<style></style>    
+
+<link rel="stylesheet" href="styles.css"> 
+
 <body> 
+    
     <div class="ScoreBoard">
     <h1 id="ScoreTitle">HIGHSCORE</h1>
         <p id="Score">0</p>
@@ -17,9 +17,9 @@
         <h3>OBJECTIVE</h3>
         <p>Eat the red apple to grow
                 <br />
-            Don't run into your tail or
+           Don't run into your tail or
                 <br />
-            the wall or you will die!
+           the wall or you will die!
         </p>
     </div>
     
@@ -37,10 +37,8 @@
     </div>
     
     <button onclick = "resetHighscore()" class = "resetButton">Reset High Score</button>
-    
-    
+    <canvas id="screen" width = "400"  height = "400"></canvas>
 </body>
-            <canvas id="screen" width = "400"  height = "400"></canvas>
-            <link rel="stylesheet" href="styles.css">
-            <script type = "text/javascript" src="SnakeJS.js"></script>
+
+<script type = "text/javascript" src="SnakeJS.js"></script>
 

@@ -21,23 +21,6 @@
     animation: titleAnimation 5s infinite;
 }
 
-@keyframes titleAnimation {
-    0%, 100% {
-        left: 50px;
-        top:200px;
-    
-    }
-    
-    50% {
-        
-        left: 60px;
-        top: 150px;   
-    }
-
-}
-
-
-
 .controls {
     color: blue;
     background: none;
@@ -49,21 +32,6 @@
     top: 200px;   
     animation: controlsAnimation 5s infinite;
     
-}
-
-@keyframes controlsAnimation {
-    0%, 100% {
-        right: 70px;
-        top:200px;
-    
-    }
-    
-    50% {
-        
-        right: 80px;
-        top: 150px;   
-    }
-
 }
 
 .resetButton{
@@ -104,7 +72,32 @@
         transform: rotate(180deg);
 
     }
-   
-    
+}
 
+@keyframes titleAnimation {
+    0%, 100% {
+        left: 50px;
+        top:200px;
+    
+    }
+    
+    50% {
+        
+        left: 60px;
+        top: 150px;   
+    }
+}
+
+@keyframes controlsAnimation {
+    0%, 100% {
+        right: 70px;
+        top:200px;
+    
+    }
+    
+    50% {
+        
+        right: 80px;
+        top: 150px;   
+    }
 }
