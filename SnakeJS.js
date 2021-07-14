@@ -11,9 +11,9 @@ shakeDone = false;
 
 window.onload = function() {
     canv = document.getElementById("screen");
-    document.body.style.backgroundColor = "#697A7A";
+    document.body.style.backgroundColor = "black";
     ctx = canv.getContext("2d");
-    canv.style = "position:absolute; left: 50%; width: 400px; margin-left: -200px; border: 8px solid #636E6E;";
+    canv.style = "position:absolute; left: 50%; width: 400px; margin-left: -200px; top: 25%; border: 8px solid #636E6E;";
     document.getElementById("Score").innerHTML = HighScore;
     document.addEventListener("keydown", KeyPressed);
     
@@ -32,7 +32,7 @@ function Play() {
         setTimeout(function(){shakeDone = true;}, 3000);
         
         if (shakeDone == true){
-            alert("Game Over: You hit a wall! Tail length of: " + Path.length);
+            alert("Game Over: You died! Tail length of: " + Path.length);
             alert(Path.length-5 + " is your score");
             document.location.reload();
             clearInterval(interval);
@@ -63,12 +63,18 @@ function Play() {
         
         
         //Collision detection of head and tail
-        if(Path[i].x == xPlayer && Path[i].y == yPlayer && input == true){  
-            alert("Game Over: You hit yourself! Tail length of: " + Path.length);
-            alert(Path.length-5 + " is your score");
-            document.location.reload();
-            clearInterval(interval);
-           }
+        if(Path[i].x == xPlayer && Path[i].y == yPlayer && input == true){
+            
+            canv.style.animation="deathShake 3s ease-in 1";
+            setTimeout(function(){shakeDone = true;}, 3000);
+            
+            if (shakeDone == true){
+                alert("Game Over: You died! Tail length of: " + Path.length);
+                alert(Path.length-5 + " is your score");
+                document.location.reload();
+                clearInterval(interval);
+             }
+    }
         
         //If apple spawns on its tail, it will respawn the apple elsewere. 
         if(Path[i].x == xApple && Path[i].y == yApple){
@@ -85,12 +91,14 @@ function Play() {
         Path.shift();
     }
     
-    //Detects if head hits apple
+    //Detects if head hits apple. If so, the apple will respawn
     if(xPlayer == xApple && yPlayer == yApple){
         Tail++;
         
         xApple = Math.floor(Math.random() * Tilecount);
         yApple = Math.floor(Math.random() * Tilecount);
+        
+    
         
         //If the apple spawns on head, it will respawn elsewere, and remove a tail as it was a mistake.
         if(xPlayer == xApple && yPlayer == yApple){
@@ -106,30 +114,35 @@ function Play() {
     
 //Switch case for the key input
 function KeyPressed(event){
-    switch(event.keyCode){
+    switch(event.keyCode){    
+            
+        //Left arrow key
         case 37:
             xVelocity=-1;
             yVelocity=0;
             input = true;
             break;
-            
+        
+        //Right Top Key
         case 38:
             xVelocity=0;
             yVelocity=-1;
             input = true;
             break;
-            
+         
+        //Right Arrow Key    
         case 39:
             xVelocity=1;
             yVelocity=0;
             input = true;
             break;
-            
+         
+        //Down Arrow Key
         case 40:
             xVelocity=0;
             yVelocity=1;
             input = true;
-            break;    
+            break;
             
     }
 
